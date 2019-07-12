@@ -27,6 +27,8 @@ with open(args.input, 'r') as i_file:
             label = input()
             if label == 'q':
                 break
+            if label == '2':
+                continue
             label = int(label)
             if label != 0 and label != 1:
                 print('wrong input')
