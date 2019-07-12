@@ -27,16 +27,25 @@ with open(args.input, 'r') as i_file:
         for line in islice(rd, start-1, None):
             s = line[1]
             print(s)
-            label = input()
-            if label == 'q':
-                break
-            count += 1
-            if label == '2':
+            pass_line = False
+            exit = False
+            while True:
+                label = input()
+                if label == 'q':
+                    exit = True
+                    break
+                elif label == '2':
+                    pass_line = True
+                    break
+                elif label == '0' or label == '1':
+                    break
+            if pass_line:
+                count += 1
                 continue
+            if exit:
+                break
             label = int(label)
-            if label != 0 and label != 1:
-                print('wrong input')
-                exit(-1)
+            count += 1
             wt.writerow([label, s])
             clear()
         wt.writerow(['next', count])
