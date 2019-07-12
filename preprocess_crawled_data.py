@@ -8,7 +8,7 @@ parser.add_argument('output')
 args = parser.parse_args()
 
 def cleanText(original):
-    text = re.sub('[-=+,#/\?:^\n-❛˓◞˂̵✧$.@*\"※~&%ㆍ!』\\‘|\(\)\[\]\<\>`\'…》]', '', original)
+    text = re.sub('[-=+,#/\?:^-❛˓◞\n\r˂̵✧$.@*\"※~&%ㆍ!』\\‘|\(\)\[\]\<\>`\'…》]', '', original)
     return text
 
 with open(args.input, 'r') as i_file:
