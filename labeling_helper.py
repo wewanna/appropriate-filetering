@@ -24,7 +24,10 @@ with open(args.input, 'r') as i_file:
         for line in rd:
             s = line[1]
             print(s)
-            label = int(input())
+            label = input()
+            if label == 'q':
+                break
+            label = int(label)
             if label != 0 and label != 1:
                 print('wrong input')
                 exit(-1)
